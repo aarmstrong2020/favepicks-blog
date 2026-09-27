@@ -54,13 +54,6 @@ export default {
           );
         }
       })
-      .on("main", {
-        element(element) {
-          if (new URL(request.url).pathname !== "/affiliate-disclosure/") return;
-            { html: true }
-          );
-        }
-      })
       .transform(response);
   }
 };
