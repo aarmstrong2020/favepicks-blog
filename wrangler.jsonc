@@ -1,7 +1,7 @@
 {
   "name": "favepicks-blog",
   "compatibility_date": "2026-09-26",
-  "main": "./src/index.js",
+  "main": "./src/logo-worker.js",
   "assets": {
     "directory": "./public"
   }
