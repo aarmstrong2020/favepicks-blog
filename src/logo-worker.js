@@ -59,7 +59,6 @@ export default {
           if (new URL(request.url).pathname !== "/affiliate-disclosure/") return;
 
           element.append(
-            '<p class="container" style="padding-bottom:32px">As an Amazon Associate I earn from qualifying purchases.</p>',
             { html: true }
           );
         }
