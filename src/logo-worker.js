@@ -57,8 +57,6 @@ export default {
       .on("main", {
         element(element) {
           if (new URL(request.url).pathname !== "/affiliate-disclosure/") return;
-
-          element.append(
             { html: true }
           );
         }
