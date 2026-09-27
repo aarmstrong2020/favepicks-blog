@@ -49,8 +49,11 @@ export default {
         element(element) {
           element.before(
             `<p style="margin:18px 0;color:#dfd4e9">As an Amazon Associate I earn from qualifying purchases.</p>
-             <a href="${pinterestUrl}" aria-label="FavePicks on Pinterest" title="FavePicks on Pinterest" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:white;border-radius:50%">
-               <img src="https://cdn.simpleicons.org/pinterest/E60023" alt="" width="36" height="36" style="display:block">
+             <a href="${pinterestUrl}" aria-label="Follow us on Pinterest" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:14px;color:#fff;text-decoration:none;font-size:18px;font-weight:700">
+               <span style="display:inline-flex;align-items:center;justify-content:center;width:68px;height:68px;background:white;border-radius:50%;flex-shrink:0">
+                 <img src="https://cdn.simpleicons.org/pinterest/E60023" alt="" width="54" height="54" style="display:block">
+               </span>
+               <span>Follow us on Pinterest</span>
              </a>`,
             { html: true }
           );
