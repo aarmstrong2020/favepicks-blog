@@ -17,7 +17,7 @@ export default {
 
           logoAdded = true;
           link.setInnerContent(
-            '<img src="/assets/Favepicks.blog%20logo.PNG" alt="FavePicks.blog" style="display:block;width:110px;height:auto">',
+            '<img src="/assets/Favepicks.blog%20logo.PNG" alt="FavePicks.blog" style="display:block;width:190px;max-width:100%;height:auto">',
             { html: true }
           );
         }
