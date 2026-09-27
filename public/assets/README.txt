@@ -1,0 +1,1 @@
+FavePicks image folder
