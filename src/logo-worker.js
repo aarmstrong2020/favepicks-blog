@@ -31,6 +31,29 @@ const productPhotos = [
   { file: "amazon-find-25.png", width: 351, height: 354 }
 ];
 
+const under25Photos = [
+  { file: "under25-find-01.png", width: 291, height: 347, alt: "A Handheld Milk Frother" },
+  { file: "under25-find-02.png", width: 381, height: 363, alt: "A Cold Brew Pitcher" },
+  { file: "under25-find-03.png", width: 466, height: 450, alt: "A Microwave Popcorn Popper" },
+  { file: "under25-find-04.png", width: 487, height: 480, alt: "Herb Scissors" },
+  { file: "under25-find-05.png", width: 420, height: 402, alt: "A Silicone Freezer Tray with a Lid" },
+  { file: "under25-find-06.png", width: 431, height: 416, alt: "A Rechargeable Book Light" },
+  { file: "under25-find-07.png", width: 448, height: 395, alt: "A Padded Book Sleeve" },
+  { file: "under25-find-08.png", width: 473, height: 451, alt: "A Thumb Page Holder" },
+  { file: "under25-find-09.png", width: 450, height: 574, alt: "A Silicone Scalp Massager" },
+  { file: "under25-find-10.png", width: 439, height: 418, alt: "A Face-Washing Headband and Wristband Set" },
+  { file: "under25-find-11.png", width: 496, height: 511, alt: "A Heatless Curling Set" },
+  { file: "under25-find-12.png", width: 549, height: 502, alt: "A Microfiber Hair Wrap" },
+  { file: "under25-find-13.png", width: 518, height: 471, alt: "A Travel Jewelry Case" },
+  { file: "under25-find-14.png", width: 358, height: 385, alt: "A Digital Luggage Scale" },
+  { file: "under25-find-15.png", width: 455, height: 425, alt: "A Foldable Purse Hook" },
+  { file: "under25-find-16.png", width: 438, height: 404, alt: "A Water Bottle Carrier with a Shoulder Strap" },
+  { file: "under25-find-17.png", width: 491, height: 341, alt: "A Plant Propagation Station" },
+  { file: "under25-find-18.png", width: 426, height: 418, alt: "Reusable Plant Support Clips" },
+  { file: "under25-find-19.png", width: 430, height: 433, alt: "A Magnetic Pickup Tool" },
+  { file: "under25-find-20.png", width: 417, height: 390, alt: "A Compact Ratcheting Screwdriver Set" }
+];
+
 export default {
   async fetch(request, env, ctx) {
     let response = await site.fetch(request, env, ctx);
@@ -41,6 +64,7 @@ export default {
 
     let logoAdded = false;
     let productIndex = 0;
+    let under25Index = 0;
     const articlePath = "/blog/25-amazon-finds-youll-wish-you-bought-sooner/";
     const path = new URL(request.url).pathname.replace(/\/?$/, "/");
     const showProductPhotos = path === articlePath;
@@ -76,6 +100,21 @@ export default {
           heading.after(
             `<figure style="margin:20px 0 24px;text-align:center">
               <img src="/assets/${photo.file}" alt="Product ${productIndex} photo" width="${photo.width}" height="${photo.height}" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;height:auto;margin:0 auto">
+            </figure>`,
+            { html: true }
+          );
+        }
+      })
+      .on("main article.post h2", {
+        element(heading) {
+          if (path !== "/blog/20-amazing-finds-under-25/") return;
+
+          const photo = under25Photos[under25Index++];
+          if (!photo) return;
+
+          heading.after(
+            `<figure style="margin:20px 0 24px;text-align:center">
+              <img src="/assets/${photo.file}" alt="${photo.alt}" width="${photo.width}" height="${photo.height}" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto">
             </figure>`,
             { html: true }
           );
