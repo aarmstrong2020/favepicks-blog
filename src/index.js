@@ -4,7 +4,7 @@ const categories = [
   ["✦", "Beauty & Self-Care", "Practical routines & thoughtful finds", "/blog/"],
   ["♡", "Family & Kids", "Ideas for busy households", "/blog/"],
   ["↗", "Car & Travel", "Stay prepared on the move", "/blog/"],
-  ["⚒", "DIY & Tools", "Tools and projects made approachable", "/blog/"],
+  ["⚒", "DIY & Tools", "Tools and projects made approachable", "/categories/diy-tools/"],
   ["●", "Pets", "Helpful picks for happier companions", "/blog/"],
   ["$", "Under $25", "Affordable finds worth buying", "/categories/under-25/"],
   ["▣", "Digital Products", "Practical downloads & simple guides", "/digital-products/"]
@@ -18,7 +18,8 @@ const articlePreviews = [
     "Budget-friendly ideas that can earn their place in your home.",
     "/blog/20-amazing-finds-under-25/"],
   ["DIY & Tools", "12 Must-Have Tools for DIY Projects",
-    "A practical starter list for repairs, upgrades, and weekend projects."]
+    "A practical starter list for repairs, upgrades, and weekend projects.",
+    "/blog/12-must-have-tools-for-diy-projects/"]
 ];
 
 function articleCards(previews = articlePreviews) {
@@ -424,6 +425,106 @@ pages["/blog/20-amazing-finds-under-25/"] = {
 <p>You can also build a wish list around something you already enjoy: better coffee mornings, more reading time, a growing plant collection, or your next weekend away.</p>
 <p>Which one would make your list? Save this roundup and follow FavePicks for smart finds, simple projects &amp; products worth buying.</p>
 <p><a href="/blog/">← Back to the Blog</a> · <a href="/categories/under-25/">More Under $25 finds</a></p></article>`
+};
+
+pages["/categories/diy-tools/"] = {
+  title: "DIY & Tools",
+  description: "Practical tools and approachable DIY projects for home repairs, upgrades, and weekend projects.",
+  body: `<section class="page-intro container">
+    <span class="eyebrow">DIY &amp; Tools</span>
+    <h1>Tools for your next project.</h1>
+    <p>Explore practical tools for household repairs, small upgrades, and weekend projects.</p>
+    ${articleCards(articlePreviews.filter(([tag]) => tag === "DIY & Tools"))}
+    <p style="margin-top:30px"><a href="/categories/">← All categories</a></p>
+  </section>`
+};
+
+pages["/blog/12-must-have-tools-for-diy-projects/"] = {
+  title: "12 Must-Have Tools for DIY Projects",
+  description: "Build a practical DIY toolkit with 12 useful tools for measuring, assembling, repairing, and finishing everyday projects around the house.",
+  body: `<article class="page-intro container narrow post">
+<nav aria-label="Breadcrumb"><a href="/blog/">Blog</a> / <a href="/categories/diy-tools/">DIY &amp; Tools</a></nav>
+<h1>12 Must-Have Tools for DIY Projects</h1>
+<p><em>This post contains affiliate links. As an Amazon Associate I earn from qualifying purchases.</em></p>
+<p>A weekend project often starts with something simple: a shelf you want to hang, cabinet handles that need updating, or a piece of furniture that could use a little attention. Then you get everything unpacked and realize you’re missing the tool that would make the job easier.</p>
+<p>A useful DIY toolkit should earn its space. These 12 tools cover practical jobs around the house, from measuring and assembling to patching and finishing. You won’t need every tool for every project, but each has a reason to be within reach.</p>
+<h2>1. Tape Measure</h2>
+<p>Before you order a shelf or pick out new cabinet hardware, grab a tape measure. Checking dimensions first can save you from buying something that almost fits.</p>
+<p>A 25-foot tape measure is a versatile choice for furniture, walls, and room layouts. Look for clear markings, a comfortable grip, and a blade lock that holds while you write down your measurements.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-01.png" alt="Tape Measure" width="885" height="732" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/4ibPCn7" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Measure the space for a storage bench, check shelf spacing, or measure the distance between existing cabinet-handle screw holes.</p>
+<h2>2. Cordless Drill and Driver Bit Set</h2>
+<p>A cordless drill is useful for projects that involve making holes or driving multiple screws. Installing brackets, building a planter, and assembling a workbench are all jobs where it can save effort.</p>
+<p>Choose one that feels comfortable in your hand, with variable speed and an adjustable clutch for driving screws. Include drill bits suited to your materials and driver bits that match your fasteners. Check whether the package includes a battery and charger before buying.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-02.png" alt="Cordless Drill and Driver Bit Set" width="492" height="770" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/47jzw4G" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Drill pilot holes for a wooden project or install shelf brackets using fasteners appropriate for the wall.</p>
+<h2>3. Ratcheting Multi-Bit Screwdriver</h2>
+<p>Even with a drill nearby, a hand screwdriver deserves a spot in the toolbox. It gives you more control when tightening small hardware or making the final adjustment on a hinge.</p>
+<p>A ratcheting model lets you turn a screw without repeatedly repositioning your grip. Look for commonly used Phillips and flathead bits, plus other styles that match the furniture and hardware in your home.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-03.png" alt="Ratcheting Multi-Bit Screwdriver" width="1082" height="387" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/4hEMH6h" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Tighten cabinet handles, adjust door hinges, or assemble small furniture pieces without overtightening the screws.</p>
+<h2>4. Bubble Level</h2>
+<p>A shelf can look straight while you’re holding it and suddenly look crooked once you step away. A bubble level helps you check before those mounting holes become permanent.</p>
+<p>A 24-inch model is a practical starting point for shelves, frames, and small home upgrades. Consider whether its size will fit the spaces where you plan to use it.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-04.png" alt="Bubble Level" width="927" height="687" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/4ztfwso" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Level a picture ledge, align a wall-mounted coat rack, or check a shelf before securing it.</p>
+<h2>5. Stud Finder</h2>
+<p>For projects involving wall-mounted storage, knowing where the framing sits is part of planning the installation. A stud finder helps you locate likely stud positions behind drywall.</p>
+<p>Choose a model with a display or indicators you find easy to understand, and follow its calibration instructions. Remember that a stud finder does not guarantee an area is clear of wiring or plumbing; mounting hardware and installation methods still need to suit the wall and the load.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-05.png" alt="Stud Finder" width="520" height="506" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/3TNdiVG" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Plan mounting locations for shelving, a wall organizer, or a coat rack.</p>
+<h2>6. Claw Hammer</h2>
+<p>A basic claw hammer handles plenty of small jobs, even in a toolbox full of cordless tools. Driving nails, removing old fasteners, and making minor repairs are good reasons to keep one around.</p>
+<p>A comfortable handle and manageable weight matter more than choosing the biggest hammer on the shelf. A smooth striking face is a sensible choice for general household work.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-06.png" alt="Claw Hammer" width="795" height="750" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/4dzr58T" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Install nail-in picture hangers or remove exposed nails from a piece you’re repairing.</p>
+<h2>7. Retractable Utility Knife</h2>
+<p>A utility knife is useful long before the actual project begins. It opens packaging, cuts cardboard for templates, and handles certain scoring and trimming tasks.</p>
+<p>Look for a secure blade lock, straightforward blade changes, and a grip that feels stable. Keep spare blades available so you can replace a dull one instead of forcing the cut.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-07.png" alt="Retractable Utility Knife" width="866" height="771" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/4B2hSQr" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Cut a cardboard template to test a shelf’s size or trim shelf liner on a suitable cutting surface.</p>
+<h2>8. Quick-Grip Bar Clamps</h2>
+<p>Clamps solve a very ordinary DIY problem: needing to hold two pieces together while also trying to line them up and fasten them.</p>
+<p>A pair of bar clamps can hold small boards during assembly or keep a glued repair positioned while it cures. Check the opening capacity against your projects, and use protective pads or scrap wood where pressure could mark the surface.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-08.png" alt="Quick-Grip Bar Clamps" width="751" height="730" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/4hHbwP5" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Hold pieces together for a small wooden organizer or secure a board to a stable work surface.</p>
+<h2>9. Combination Square</h2>
+<p>When you’re building something, measuring length is only part of the job. You also need marks and corners that line up accurately.</p>
+<p>A combination square helps you mark right angles and repeat a consistent distance from an edge. It’s especially useful when several pieces need matching measurements.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-09.png" alt="Combination Square" width="797" height="752" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/4B1Voz8" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Mark cut lines on small boards or lay out matching screw positions for a simple woodworking project.</p>
+<h2>10. Putty Knife</h2>
+<p>Small wall repairs are often what make a room refresh feel finished. Once the old hooks and frames come down, a putty knife helps deal with the holes they leave behind.</p>
+<p>A flexible blade around 2 inches wide is useful for applying patching compound to small imperfections. Wider repairs may call for a wider knife and a different repair method.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-10.png" alt="Putty Knife" width="732" height="707" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/4B30riP" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Fill small nail holes before painting or spread a suitable filler over minor surface damage.</p>
+<h2>11. Sanding Block</h2>
+<p>For a little wall patch or a rough edge on a small wooden project, a sanding block can be all you need. It gives sandpaper a supportive surface and helps keep your pressure more even.</p>
+<p>Choose the grit for the material and the finish you’re trying to achieve. A block that accepts replacement sandpaper is handy for switching between jobs.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-11.png" alt="Sanding Block" width="820" height="722" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/47jA4Yi" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Smooth a dried patch before painting or soften rough edges on an unfinished wooden organizer.</p>
+<h2>12. Caulk Gun</h2>
+<p>A caulk gun is useful for finishing projects where a suitable sealant is needed. Those small gaps along paintable trim can stand out after the rest of the room looks fresh.</p>
+<p>Look for smooth trigger control and an easy pressure-release mechanism. The caulk itself matters just as much as the gun: choose a product appropriate for the surface, location, and whether it needs to be painted.</p>
+<figure style="margin:20px 0 24px;text-align:center"><img src="/assets/diy-tool-12.png" alt="Caulk Gun" width="767" height="692" loading="lazy" decoding="async" style="display:block;width:auto;max-width:100%;max-height:480px;object-fit:contain;height:auto;margin:0 auto"></figure>
+<p><a class="button button-gold" href="https://amzn.to/4yP7VEK" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<p>Put it to work: Apply paintable caulk to appropriate gaps along baseboards or door trim before the final coat of paint.</p>
+<h2>Build Your Toolkit Around Your Next Project</h2>
+<p>You don’t have to buy all 12 tools at once. For hanging shelves, start with measuring and mounting tools. For a paint refresh, a putty knife, sanding block, and caulk gun may be the more useful additions.</p>
+<p>Think about the next job you actually want to finish, then choose tools that will help with that project and the ones likely to follow. Keep a pencil, suitable fasteners, and the protective equipment your task requires alongside them.</p>
+<p>A well-chosen toolkit makes it easier to turn “we should fix that” into a finished weekend project.</p>
+<p><a href="/blog/">← Back to the Blog</a> · <a href="/categories/diy-tools/">More DIY &amp; Tools ideas</a></p></article>`
 };
 
 const css = `
