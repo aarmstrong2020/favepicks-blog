@@ -6,7 +6,7 @@ const categories = [
   ["↗", "Car & Travel", "Stay prepared on the move", "/blog/"],
   ["⚒", "DIY & Tools", "Tools and projects made approachable", "/blog/"],
   ["●", "Pets", "Helpful picks for happier companions", "/blog/"],
-  ["$", "Under $25", "Affordable finds worth buying", "/blog/"],
+  ["$", "Under $25", "Affordable finds worth buying", "/categories/under-25/"],
   ["▣", "Digital Products", "Practical downloads & simple guides", "/digital-products/"]
 ];
 
@@ -15,13 +15,14 @@ const articlePreviews = [
     "Practical finds for kitchen prep, home organization, and life on the go.",
     "/blog/25-amazon-finds-youll-wish-you-bought-sooner/"],
   ["Affordable Finds", "20 Amazing Finds Under $25 That Are Actually Useful",
-    "Budget-friendly ideas that can earn their place in your home."],
+    "Budget-friendly ideas that can earn their place in your home.",
+    "/blog/20-amazing-finds-under-25/"],
   ["DIY & Tools", "12 Must-Have Tools for DIY Projects",
     "A practical starter list for repairs, upgrades, and weekend projects."]
 ];
 
-function articleCards() {
-  return `<div class="article-grid">${articlePreviews.map(([tag, title, description, href]) => `
+function articleCards(previews = articlePreviews) {
+  return `<div class="article-grid">${previews.map(([tag, title, description, href]) => `
     <article class="article-card">
       <span class="eyebrow">${tag}</span>
       <h3>${href ? `<a href="${href}">${title}</a>` : title}</h3>
@@ -60,7 +61,7 @@ const pages = {
             <div class="feature-price">$25</div>
             <h2>Smart doesn’t have to mean expensive.</h2>
             <p>Our Under $25 collection focuses on affordable items with a practical purpose—not clutter for the sake of a trend.</p>
-            <a href="/blog/">See affordable finds →</a>
+            <a href="/categories/under-25/">See affordable finds →</a>
           </aside>
         </div>
       </section>
@@ -83,7 +84,7 @@ const pages = {
             <div>
               <span class="eyebrow">From the blog</span>
               <h2>Useful reads for everyday life</h2>
-              <p>Explore our latest guide, with more practical finds coming soon.</p>
+              <p>Explore our latest guides, with more practical finds coming soon.</p>
             </div>
             <a class="section-link" href="/blog/">Visit the blog →</a>
           </div>
@@ -115,7 +116,7 @@ const pages = {
       <section class="page-intro container">
         <span class="eyebrow">FavePicks Blog</span>
         <h1>Useful finds for everyday life.</h1>
-        <p>Explore our latest guide below. Future guides are marked coming soon.</p>
+        <p>Explore our latest guides below. Future guides are marked coming soon.</p>
         ${articleCards()}
       </section>`
   },
@@ -314,6 +315,115 @@ pages["/blog/25-amazon-finds-youll-wish-you-bought-sooner/"] = {
 <p>That’s the kind of find I want to share at FavePicks: something useful enough to become part of your routine.</p>
 <p>Spotted something that would help at your house? Check out the linked finds, choose what fits your space, and save this list for later.</p>
 <p><a href="/blog/">← Back to the Blog</a> · <a href="/categories/home-kitchen/">More Home &amp; Kitchen ideas</a></p></article>`
+};
+
+pages["/categories/under-25/"] = {
+  title: "Under $25",
+  description: "Explore FavePicks finds for a $25-per-item budget, including coffee accessories, reading essentials, travel ideas, and small gifts.",
+  body: `<section class="page-intro container">
+    <span class="eyebrow">Under $25</span>
+    <h1>Small finds for your everyday budget.</h1>
+    <p>Browse ideas for coffee mornings, reading time, travel, and thoughtful gifts. Prices can change, so check the selected size, style, and current price before ordering.</p>
+    ${articleCards(articlePreviews.filter(([, , , href]) => href === "/blog/20-amazing-finds-under-25/"))}
+    <p style="margin-top:30px"><a href="/categories/">← All categories</a></p>
+  </section>`
+};
+
+pages["/blog/20-amazing-finds-under-25/"] = {
+  title: "20 Amazing Finds Under $25 That Are Actually Useful",
+  description: "Explore 20 Amazon finds for a $25-per-item budget, from coffee accessories and reading essentials to self-care, travel, plants, and handy tools.",
+  body: `<article class="page-intro container narrow post">
+<nav aria-label="Breadcrumb"><a href="/blog/">Blog</a> / <a href="/categories/under-25/">Under $25</a></nav>
+<h1>20 Amazing Finds Under $25 That Are Actually Useful</h1>
+<p class="info-box">This post contains affiliate links. If you purchase through them, I may earn a commission at no extra cost to you. As an Amazon Associate, I earn from qualifying purchases.</p>
+<p>There’s something satisfying about finding a little upgrade that fits your budget—and fits your life. Something for your morning coffee, your next road trip, or that evening when you finally get a few minutes to yourself.</p>
+<p>This FavePicks roundup mixes practical buys with small everyday treats. Think at-home coffee accessories, thoughtful travel finds, reading essentials, and a few handy tools you might not have considered.</p>
+<p>Use this list as shopping inspiration for a $25-per-item budget. Prices vary, so check the selected size, style, and current price before ordering.</p>
+<h2>1. A Handheld Milk Frother</h2>
+<p>If your coffee order usually includes foam, a handheld frother could be a fun addition to your morning routine. Froth your milk separately, pour it over your coffee, and finish with cinnamon or your favorite syrup.</p>
+<p>Basic frother wands are an affordable category to explore for an at-home coffee setup.</p>
+<p><a class="button button-gold" href="https://amzn.to/4yfGfru" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>2. A Cold Brew Pitcher</h2>
+<p>For the person who reaches for iced coffee in every season, a cold brew pitcher with a removable filter makes a useful fridge staple. Prepare a batch ahead of time, then pour a glass when you’re ready.</p>
+<p>Add your preferred milk and flavoring, and you’ve got a morning drink waiting before the day gets busy.</p>
+<p><a class="button button-gold" href="https://amzn.to/4ig0Gj6" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>3. A Microwave Popcorn Popper</h2>
+<p>Movie night deserves a good snack. A reusable microwave popcorn popper lets you start with plain kernels and choose your own seasoning afterward.</p>
+<p>Go classic with butter and salt, try a little cinnamon sugar, or set out a few toppings so everyone can make their own bowl.</p>
+<p><a class="button button-gold" href="https://amzn.to/4yfmd07" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>4. Herb Scissors</h2>
+<p>Fresh herbs make a meal feel a little more finished, but pulling out a cutting board for a handful of chives can feel like an extra chore.</p>
+<p>Herb scissors let you snip small amounts directly over eggs, potatoes, salads, or pasta. They’re especially appealing if you already keep a few herbs growing on the windowsill.</p>
+<p><a class="button button-gold" href="https://amzn.to/4zMctvJ" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>5. A Silicone Freezer Tray with a Lid</h2>
+<p>Think beyond ice cubes. A portioned freezer tray can hold leftover coffee, broth, or small servings of sauce.</p>
+<p>Coffee cubes are particularly handy for iced drinks when you don’t want melting ice to water them down. Choose a tray with compartments sized for how you’ll actually use it.</p>
+<p><a class="button button-gold" href="https://amzn.to/3W21YWd" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>6. A Rechargeable Book Light</h2>
+<p>For anyone whose “one more chapter” regularly turns into several, a book light makes a thoughtful little purchase.</p>
+<p>A lightweight clip and adjustable brightness are worth looking for. It’s something you can keep tucked beside your current read, ready for evenings when the rest of the room is winding down.</p>
+<p><a class="button button-gold" href="https://amzn.to/4Bienpt" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>7. A Padded Book Sleeve</h2>
+<p>Throwing a paperback into a tote alongside keys, snacks, and everything else can leave it looking well-traveled before you reach chapter two.</p>
+<p>A book sleeve gives your current read a little protection in your bag. There are plenty of patterns to choose from, so this one can feel personal as well as practical.</p>
+<p><a class="button button-gold" href="https://amzn.to/4ya8xnf" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>8. A Thumb Page Holder</h2>
+<p>This small accessory slips over your thumb and helps hold an open book in place with one hand.</p>
+<p>It’s an interesting option for paperback readers who like to read while holding a drink. Comfort depends on the fit and the book’s size, so look closely at the dimensions before choosing one.</p>
+<p><a class="button button-gold" href="https://amzn.to/4jf92IT" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>9. A Silicone Scalp Massager</h2>
+<p>A scalp massager can add a pleasant extra step to your shampoo routine. Soft silicone tips let you gently work shampoo through your hair without relying on your fingernails.</p>
+<p>This is the sort of small self-care find that pairs nicely with a favorite shampoo for an inexpensive gift.</p>
+<p><a class="button button-gold" href="https://amzn.to/4ybMtIQ" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>10. A Face-Washing Headband and Wristband Set</h2>
+<p>The wristbands are the clever part here. They help catch the water that otherwise runs down your arms while you wash your face.</p>
+<p>Add a headband to keep your hair back, and your evening skincare routine feels a little less messy. Choose a washable set you can rotate through the laundry.</p>
+<p><a class="button button-gold" href="https://amzn.to/4yHIwMZ" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>11. A Heatless Curling Set</h2>
+<p>If you enjoy experimenting with hairstyles, a soft curling rod and scrunchie set gives you another way to create waves without a heated styling tool.</p>
+<p>Results vary with hair length, texture, and technique, so allow yourself a few practice runs. It could be a fun weekend experiment before trying it ahead of a busy morning.</p>
+<p><a class="button button-gold" href="https://amzn.to/4zpk571" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>12. A Microfiber Hair Wrap</h2>
+<p>A dedicated hair wrap is less bulky than balancing a full-size bath towel on your head while getting dressed.</p>
+<p>Look for a secure fastening and enough room for your hair’s length and thickness. It’s a simple addition to the getting-ready routine, especially if you like having your hands free for skincare or makeup.</p>
+<p><a class="button button-gold" href="https://amzn.to/47Le5tp" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>13. A Travel Jewelry Case</h2>
+<p>A compact jewelry case gives earrings, rings, and necklaces separate places to travel.</p>
+<p>It’s useful for a weekend away when you only want a few options. Pick a layout that matches what you wear most—lots of ring slots won’t help much if you mainly pack necklaces.</p>
+<p><a class="button button-gold" href="https://amzn.to/4hHfibc" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>14. A Digital Luggage Scale</h2>
+<p>Packing is easier when you have a way to check your suitcase’s weight before leaving home.</p>
+<p>A handheld luggage scale is small enough to bring along for the return trip, too. That’s particularly useful when souvenirs somehow take up more room than you expected.</p>
+<p><a class="button button-gold" href="https://amzn.to/4hGbBT1" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>15. A Foldable Purse Hook</h2>
+<p>A small table hook gives your bag somewhere to hang at compatible café or restaurant tables.</p>
+<p>Keep one tucked into an inside pocket so it’s there when you need it. Check its weight limit and the types of table edges it fits; those details matter more than the decorative finish.</p>
+<p><a class="button button-gold" href="https://amzn.to/4dznMi4" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>16. A Water Bottle Carrier with a Shoulder Strap</h2>
+<p>For walks, outdoor events, or afternoons spent watching the kids’ activities, a bottle carrier can free up a hand.</p>
+<p>Some have a small pocket for keys or a phone, making them an option when you don’t want to bring a larger bag. Measure your bottle before picking a size.</p>
+<p><a class="button button-gold" href="https://amzn.to/4jh7NZA" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>17. A Plant Propagation Station</h2>
+<p>A small stand with glass vessels can give suitable plant cuttings a place to root while adding something pretty to a shelf.</p>
+<p>Watching the roots develop is part of the appeal. Pair it with a cutting from a plant you already own or give it to a friend who always has room for one more houseplant.</p>
+<p><a class="button button-gold" href="https://amzn.to/3Um1xpl" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>18. Reusable Plant Support Clips</h2>
+<p>Climbing and trailing plants sometimes need a little guidance. Plant clips can help attach stems to an appropriate support and keep growth arranged the way you want it.</p>
+<p>Choose clips that leave room around the stem, and check them as the plant grows. This is a particularly useful little find for someone building an indoor plant collection.</p>
+<p><a class="button button-gold" href="https://amzn.to/4jWXB8K" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>19. A Magnetic Pickup Tool</h2>
+<p>Drop a screw behind a workbench, and this tool suddenly becomes very interesting.</p>
+<p>A telescoping magnetic pickup tool reaches into awkward spaces to retrieve small magnetic metal parts. It’s a compact addition to a household toolkit and a practical gift idea for someone who enjoys fixing things.</p>
+<p><a class="button button-gold" href="https://amzn.to/3VudART" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>20. A Compact Ratcheting Screwdriver Set</h2>
+<p>For loose cabinet handles, battery compartments, and small assembly jobs, having a compact screwdriver set nearby can save a trip to the bigger toolbox.</p>
+<p>Choose a set with the bits you’re most likely to use and a case that keeps them together. A comfortable handle is more valuable than a huge collection of bits you’ll never touch.</p>
+<p><a class="button button-gold" href="https://amzn.to/3Uj7oM8" target="_blank" rel="sponsored nofollow noopener noreferrer">View on Amazon →</a></p>
+<h2>A Few Thoughtful Gift Pairings</h2>
+<p>Several of these finds would make easy small gifts. Pair a book light with a paperback, a milk frother with coffee syrup, or a travel jewelry case with a pair of earrings.</p>
+<p>You can also build a wish list around something you already enjoy: better coffee mornings, more reading time, a growing plant collection, or your next weekend away.</p>
+<p>Which one would make your list? Save this roundup and follow FavePicks for smart finds, simple projects &amp; products worth buying.</p>
+<p><a href="/blog/">← Back to the Blog</a> · <a href="/categories/under-25/">More Under $25 finds</a></p></article>`
 };
 
 const css = `
